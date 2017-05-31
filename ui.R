@@ -12,11 +12,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                            choices = c("World", "America"),
                            selected = "World")
              ),
-             mainPanel(h3("Team members"),
-                h4("  Ivan Mireles"),
-                h4("  Drew Gallardo"),
-                h4("  William Abuassi"),
-                h4("  Sitong Wu"),
+             mainPanel(
                 br(),
                 h3("Project Description"),
                 p("The data set we will be working with is OSMI Mental Health in Tech Survey 2016, 
@@ -40,17 +36,37 @@ shinyUI(navbarPage("Mental Health in the Tech World",
             )
         )
   ),
-  tabPanel('Percentage/ Amount of health disorders',
-           titlePanel('Choose your country'),
+  tabPanel('Health Disorders by Country',
+           titlePanel(''),
            sidebarLayout(
              sidebarPanel(
-               selectizeInput('State', label = NULL, choices = NULL, selected = NULL, multiple = FALSE,
-                              options = NULL)
+               selectizeInput('State', label = 'Choose your country', choices = NULL, selected = NULL,
+                              multiple = FALSE, options = NULL)
              ),
              mainPanel(
-               plotlyOutput('countrybarchart')
+               plotlyOutput('countrybarchart'),
+               br(),
+               h2('Mental Health Has no Barriers in the World', align = 'center'),
+               br(),
+               p('Even in the tech field I feel that it is imperative to understand you will be around people who have
+                 mental health disorders. No matter whether you are in the United States or in the United Kingdom people
+                 do or feel like they may have a mental health disorder. The people side of technology needs those who
+                 understand, and the companies do have to be aware that whether they would like to believe it or not,
+                 they should use resources to help those with mental health disorders in their company.', align = 'Center')
              )
            )
+  ),
+  tabPanel('Documentation',
+           titlePanel('Where is our data coming from? '),
+           sidebarLayout(
+             sidebarPanel(),
+             mainPanel(h3("Team members"),
+                       h4("  Ivan Mireles"),
+                       h4("  Drew Gallardo"),
+                       h4("  William Abuassi"),
+                       h4("  Sitong Wu")
+            )
+          )
   )
 ))
   

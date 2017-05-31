@@ -9,7 +9,8 @@ source('./scripts/AmountMentalHealth.r')
 
 shinyServer(function(input, output, session) { 
   
-  updateSelectizeInput(session, 'State', choices = mental.health$What.country.do.you.live.in., server = TRUE)
+  updateSelectizeInput(session, 'State', choices = mental.health$What.country.do.you.work.in., server = TRUE,
+                       selected = 'United States of America')
   
   output$countrybarchart <- renderPlotly({
     return(AmountMentalHealth(input$State))

@@ -17,8 +17,8 @@ work.places <- mental.health %>%
   select(What.country.do.you.work.in., Do.you.currently.have.a.mental.health.disorder.)
 
 # Groups dataset by country then counting the answers submitted on if they currently have a mental health disorder
-work.places.by.country <- work.places %>% 
-  group_by(What.country.do.you.work.in.) %>% 
+work.places.by.country <-
+  work.places %>% group_by(What.country.do.you.work.in.) %>% 
   count(Do.you.currently.have.a.mental.health.disorder.)
 
 # Creates data for each gender norrawing down by row.
@@ -35,11 +35,13 @@ number.of.people <- sum(gender.data$x, na.rm = FALSE)
 
 # Creates Bar chart for countries vs having a mental disorder
 AmountMentalHealth <- function (country) {
-  country.looking.for <- work.places.test %>% 
+  country.looking.for <- work.places.by.country %>% 
     filter(What.country.do.you.work.in. == country)
   
-  p <- plot_ly(country.looking.for, x = ~Do.you.currently.have.a.mental.health.disorder., y = ~n, type = 'bar', name = 'testing') %>%
-    layout(title = country, yaxis = list(title = 'Count'), xaxis = list(title = 'Do you currently have a mental health disorder'), 
+  p <- plot_ly(country.looking.for, x = ~Do.you.currently.have.a.mental.health.disorder.,
+               y = ~n, type = 'bar', name = 'testing') %>%
+    layout(title = country, yaxis = list(title = 'Number of People'), 
+           xaxis = list(title = 'Do you currently have a mental health disorder>'), 
            barmode = 'group')
   
   return(p)
