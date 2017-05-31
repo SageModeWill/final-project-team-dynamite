@@ -36,6 +36,20 @@ shinyUI(navbarPage("Mental Health in the Tech World",
             )
         )
   ),
+  tabPanel('Data source',
+           titlePanel('Where is our data comming from? '),
+           sidebarLayout(
+             sidebarPanel(
+               selectInput(inputId = "map_type",
+                           label = "World or America",
+                           choices = c("World", "America"),
+                           selected = "World")
+             ),
+             mainPanel(
+               plotlyOutput('geoAmerica')
+             )
+           )
+  ),
   tabPanel('Health Disorders by Country',
            titlePanel(''),
            sidebarLayout(
@@ -57,17 +71,15 @@ shinyUI(navbarPage("Mental Health in the Tech World",
            )
   ),
   tabPanel('Documentation',
-           titlePanel('Where is our data coming from? '),
-           sidebarLayout(
-             sidebarPanel(),
-             mainPanel(h3("Team members"),
-                       h4("  Ivan Mireles"),
-                       h4("  Drew Gallardo"),
-                       h4("  William Abuassi"),
-                       h4("  Sitong Wu")
-            )
+           titlePanel(''),
+           #sidebarLayout(
+             #sidebarPanel(),
+           mainPanel(h3("Team members", align = 'center'),
+                       h4("  Ivan Mireles", align = 'center'),
+                       h4("  Drew Gallardo", align = 'center'),
+                       h4("  William Abuassi", align = 'center'),
+                       h4("  Sitong Wu", align = 'center')
           )
   )
 ))
-  
 
