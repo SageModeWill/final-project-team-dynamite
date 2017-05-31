@@ -17,8 +17,12 @@ shinyServer(function(input, output, session) {
     return(AmountMentalHealth(input$State))
   })
   
-  output$geoAmerica <- renderPlotly({
-    return(data.geo.america(df))
+  output$AmericaMap <- renderPlotly({
+        return(data.geo.america(df))
+  })
+  
+  output$WorldMap <- renderPlotly({
+    return(data.geo.world(df))
   })
   
 })

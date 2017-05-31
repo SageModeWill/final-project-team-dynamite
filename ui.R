@@ -4,10 +4,6 @@ library(plotly)
 
 shinyUI(navbarPage("Mental Health in the Tech World",
   tabPanel('Overview',
-           titlePanel('Where is our data coming from? '),
-           sidebarLayout(
-             sidebarPanel(
-             ),
              mainPanel(
                 br(),
                 h3("Project Description"),
@@ -30,20 +26,14 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                   if they think that is a problem there."),
                 br()
             )
-        )
-  ),
+         
+    ),
   tabPanel('Data source',
            titlePanel('Where is our data comming from? '),
-           sidebarLayout(
-             sidebarPanel(
-               selectInput(inputId = "map_type",
-                           label = "World or America",
-                           choices = c("World", "America"),
-                           selected = "World")
-             ),
-             mainPanel(
-               plotlyOutput('geoAmerica')
-             )
+           
+           mainPanel(
+             plotlyOutput('AmericaMap'),
+             plotlyOutput('WorldMap')
            )
   ),
   tabPanel('Health Disorders by Country',
@@ -76,6 +66,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                        h4("  William Abuassi", align = 'center'),
                        h4("  Sitong Wu", align = 'center')
           )
+    )
   )
-))
+)
 

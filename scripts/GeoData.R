@@ -1,5 +1,6 @@
 library(dplyr)
 library(plotly)
+library(countrycode)
 
 data.geo.america <- function(df){
   
@@ -25,12 +26,39 @@ data.geo.america <- function(df){
     ) %>%
     colorbar(title = "Amount of Survey") %>%
     layout(
-      title = 'Where is our data comming from ?',
+      title = 'American Map for the Data Source',
       geo = g
     )
   
   return(p)
 }
+
+data.geo.world <- function(df){
+  geo.world <- df  %>% group_by(What.country.do.you.work.in.) %>% summarise(n = n())
+  
+  geo.world <- geo.world %>% mutate(code = countrycode(geo.world$What.country.do.you.work.in., "country.name", "iso3c" )) %>% filter(code != "")
+  
+  l <- list(color = toRGB("grey"), width = 0.5)
+  
+  g <- list(
+    showframe = FALSE,
+    showcoastlines = FALSE,
+    projection = list(type = 'Mercator')
+  )
+  
+  p <- plot_geo(geo.world) %>%
+    add_trace(
+      z = ~n, color = ~n, colors = 'Blues',
+      text = ~What.country.do.you.work.in., locations = ~code, marker = list(line = l)
+    ) %>%
+    colorbar(title = 'Amount of Survey') %>%
+    layout(
+      title = 'World Map for the Data Source',
+      geo = g
+    )
+  return(p)
+}
+
 
 
 
