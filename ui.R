@@ -32,8 +32,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
            titlePanel('Where is our data comming from? '),
            
            mainPanel(
-             plotlyOutput('AmericaMap'),
-             plotlyOutput('WorldMap')
+             plotlyOutput('WorldMap'),
+             plotlyOutput('AmericaMap')
            )
   ),
   tabPanel('Health Disorders by Country',
