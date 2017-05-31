@@ -3,7 +3,7 @@ library(dplyr)
 library(shiny)
 library(rsconnect)
 
-df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAsFactors = FALSE)
+df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAsFactors = FALSE) %>% as.data.frame()
 
 source('./scripts/AmountMentalHealth.r')
 
@@ -15,4 +15,3 @@ shinyServer(function(input, output, session) {
     return(AmountMentalHealth(input$State))
   })
 })
-
