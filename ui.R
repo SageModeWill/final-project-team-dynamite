@@ -4,7 +4,7 @@ library(plotly)
 
 shinyUI(navbarPage("Mental Health in the Tech World",
   
-  tabPanel('Percentage/ Amount of health disorders',
+  tabPanel('Health Disorders Across the Globe',
            
            titlePanel('Choose your country'),
            

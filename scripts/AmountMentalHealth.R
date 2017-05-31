@@ -39,7 +39,7 @@ AmountMentalHealth <- function (country) {
     filter(What.country.do.you.work.in. == country)
   
   p <- plot_ly(country.looking.for, x = ~Do.you.currently.have.a.mental.health.disorder., y = ~n, type = 'bar', name = 'testing') %>%
-    layout(title = 'test', yaxis = list(title = 'Count'), xaxis = list(title = 'Do you currently have a mental health disorder'), 
+    layout(title = country, yaxis = list(title = 'Count'), xaxis = list(title = 'Do you currently have a mental health disorder'), 
            barmode = 'group')
   
   return(p)
