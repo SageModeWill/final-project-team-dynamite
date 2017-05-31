@@ -2,26 +2,23 @@
 library(shiny)
 library(plotly)
 
-shinyUI(fluidPage(
+shinyUI(navbarPage("Mental Health in the Tech World",
   
-  titlePanel("Mental Health in the Tech World"),
-  
-  tabPanel('Company Size vs. Comfort of Sharing',
+  tabPanel('Percentage/ Amount of health disorders',
            
-           titlePanel('What is this'),
+           titlePanel('Choose your country'),
            
            sidebarLayout(
              
              sidebarPanel(
                
-               selectInput(''))
+               selectizeInput('State', label = NULL, choices = NULL, selected = NULL, multiple = FALSE,
+                              options = NULL)
              ),
            
-           mainPanel(
-             plotlyOutput('companySize')
-           )
-    )
-  
-  
-  
+            mainPanel(
+             plotlyOutput('countrybarchart')
+            )
+          )
+  )
 ))
