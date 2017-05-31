@@ -7,10 +7,6 @@ shinyUI(navbarPage("Mental Health in the Tech World",
            titlePanel('Where is our data coming from? '),
            sidebarLayout(
              sidebarPanel(
-               selectInput(inputId = "map_type",
-                           label = "World or America",
-                           choices = c("World", "America"),
-                           selected = "World")
              ),
              mainPanel(
                 br(),
