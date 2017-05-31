@@ -38,20 +38,34 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                   if they think that is a problem there."),
                 br()
             )
-        )
-  ),
+        )  
+    ),
   tabPanel('Percentage/ Amount of health disorders',
-           titlePanel('Choose your country'),
-           sidebarLayout(
-             sidebarPanel(
-               selectizeInput('State', label = NULL, choices = NULL, selected = NULL, multiple = FALSE,
-                              options = NULL)
-             ),
-             mainPanel(
-               plotlyOutput('countrybarchart')
-             )
-           )
+    titlePanel('Choose your country'),
+    sidebarLayout(
+        sidebarPanel(
+          selectizeInput('State', label = NULL, choices = NULL, selected = NULL, multiple = FALSE,
+                          options = NULL)
+          ),
+        mainPanel(
+          plotlyOutput('countrybarchart')
+        )
+      )
+    ),
+  tabPanel('Data source',
+    titlePanel('Where is our data comming from? '),
+    sidebarLayout(
+        sidebarPanel(
+          selectInput(inputId = "map_type",
+                      label = "World or America",
+                      choices = c("World", "America"),
+                      selected = "World")
+          ),
+        mainPanel(
+          plotlyOutput('geoAmerica')
+        )
+      )
+    )
   )
-))
-  
+)
 
