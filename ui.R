@@ -12,11 +12,15 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                img(src = "Openup.png", height = 300, width = 500),
                br(),
                br(),
-               p('In 2016, Open Sourcing Mental Illness conducted a poll on 1433 individuals of varying age in order 
-                  to study the mental health in the tech world.'),
+               p('In 2016, Open Sourcing Mental Illness conducted a poll on 1433 individuals in states and countries
+                  in order to study the mental health in the tech world.'),
                br(),
                p('This webpage will allow our target audience like companies to easily read and visualize 
-                 the data on mental health. ')
+                 the data on mental health. We hope our data will allow companies to see the importance of good
+                 treatment, and how people with some type of mental health issue may react to different reactions like
+                 talking to a co-worker or supervisor about their problems. More importantly however, we hope companies
+                 realize there is always more to be done to allow those with mental health issues to thrive in work,
+                 and not be afraid no matter the size of the company.')
             )
          
   ),
@@ -84,7 +88,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
            mainPanel(
              plotlyOutput('treatment'),
              br(),
-             h2('Treatments is Beneficial to Work Efficiency', align = 'center'),
+             h2('Good Treatment is Beneficial to Work Efficiency', align = 'center'),
              p('According to the survey results, one can interpret the data to represent different scenarious involving 
                employees and mental health issues. This is imporant when looking at the data and drawing the following 
                conclusion: A worker who fails to receive the proper treatment for their health issues may be subject to 
