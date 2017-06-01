@@ -2,11 +2,17 @@ library(dplyr)
 library(plotly)
 library(countrycode)
 
+# Creates United States map
 data.geo.america <- function(df){
   
-  geo.america <- df %>% filter(What.US.state.or.territory.do.you.work.in. != "") %>% group_by(What.US.state.or.territory.do.you.work.in.) %>% summarise(n = n())
+  geo.america <- df %>% 
+    filter(What.US.state.or.territory.do.you.work.in. != "") %>% 
+    group_by(What.US.state.or.territory.do.you.work.in.) %>% 
+    summarise(n = n())
   
-  geo.america <- geo.america %>% mutate(state = state.abb[match(geo.america$What.US.state.or.territory.do.you.work.in., state.name)]) %>% filter(state != "")
+  geo.america <- geo.america %>% 
+    mutate(state = state.abb[match(geo.america$What.US.state.or.territory.do.you.work.in., state.name)]) %>%
+    filter(state != "")
   
   geo.america$hover <- with(geo.america, paste("surveys from", What.US.state.or.territory.do.you.work.in., '<br>'))
   
@@ -33,10 +39,13 @@ data.geo.america <- function(df){
   return(p)
 }
 
+# Creates world map
 data.geo.world <- function(df){
   geo.world <- df  %>% group_by(What.country.do.you.work.in.) %>% summarise(n = n())
   
-  geo.world <- geo.world %>% mutate(code = countrycode(geo.world$What.country.do.you.work.in., "country.name", "iso3c" )) %>% filter(code != "")
+  geo.world <- geo.world %>% 
+    mutate(code = countrycode(geo.world$What.country.do.you.work.in., "country.name", "iso3c" )) %>% 
+    filter(code != "")
   
   l <- list(color = toRGB("grey"), width = 0.5)
   
