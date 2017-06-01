@@ -2,17 +2,18 @@
 library(dplyr)
 library(shiny)
 library(rsconnect)
+library(plotly)
 
-df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAsFactors = FALSE) %>% as.data.frame()
+df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAsFactors = FALSE)
 
-source('./scripts/AmountMentalHealth.r')
-source('./scripts/GeoData.r')
-source('./scripts/SurveyChart.r')
+source('./scripts/AmountMentalHealth.R')
+source('./scripts/GeoData.R')
+source('./scripts/SurveyChart.R')
 source('./scripts/BuildCompanySizeChart.R')
 
 shinyServer(function(input, output, session) { 
   
-  updateSelectizeInput(session, 'State', choices = mental.health$What.country.do.you.work.in., server = TRUE,
+  updateSelectizeInput(session, 'State', choices = df$What.country.do.you.work.in., server = TRUE,
                        selected = 'United States of America')
   
   output$countrybarchart <- renderPlotly({

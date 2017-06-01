@@ -2,6 +2,7 @@
 library(shiny)
 library(plotly)
 library(shinythemes)
+library(rsconnect)
 
 shinyUI(navbarPage("Mental Health in the Tech World",
                    theme = shinytheme("yeti"),
