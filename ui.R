@@ -4,8 +4,11 @@ library(plotly)
 library(shinythemes)
 library(rsconnect)
 
+# Usern interface of shiny app, and loading in page theme
 shinyUI(navbarPage("Mental Health in the Tech World",
                    theme = shinytheme("yeti"),
+                   
+  # One tab of the user interface                 
   tabPanel('Overview',
              mainPanel(
                h1(strong("2016 Mental Health Tech Survey")),
@@ -24,6 +27,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                  and not be afraid no matter the size of the company.')
             )
   ),
+  
+  # The second tab of the user interface 
   tabPanel('Data Source',
            titlePanel('Where is our data coming from? '),
            mainPanel(
@@ -31,6 +36,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
              plotlyOutput('AmericaMap')
            )
   ),
+  
+  # The third tab of the user interface
   tabPanel('Health Disorders by Country',
            titlePanel(''),
            sidebarLayout(
@@ -51,6 +58,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
              )
            )
   ),
+  
+  # The fourth tab of the user interface
   tabPanel('Company Size and Comfort of Sharing',
            titlePanel(""),
            sidebarLayout(
@@ -82,6 +91,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
              )
              )
   ),
+  
+  # The fifth tab of the user i
   tabPanel('Treatments Effect on Work',
            titlePanel('How Important is Treatment?'),
            mainPanel(
@@ -97,6 +108,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                would be rare as opposed to being a day-to-day issue within the workplace.')
             )
   ),
+  
+  # The sixth tab of the user interface
   tabPanel('Documentation',
            titlePanel(''),
            #sidebarLayout(
