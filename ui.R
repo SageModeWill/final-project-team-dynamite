@@ -91,7 +91,17 @@ shinyUI(navbarPage("Mental Health in the Tech World",
   tabPanel('Treatments Effect on Work',
            titlePanel('How Important is Treatment?'),
            mainPanel(
-             plotlyOutput('treatment')
+             plotlyOutput('treatment'),
+             br(),
+             h2('Treatments is Beneficial to Work Efficiency', align = 'center'),
+             p('According to the survey results, one can interpret the data to represent different scenarious involving employees and mental health issues.
+               This is imporant when looking at the data and drawing the following conclusion: A worker who fails to receive the proper treatment for their health issues may be subject to inadequate work performance.
+               this is because the mental health issue is more than likely to become a continuous/reoccuring problem for the individual if left untreated. The difference in 
+               receiving treatment, however, is that workers would actively be aware of their behaviors, and any minor issue that may occur would be rare
+               as opposed to being a day-to-day issue within the workplace.')
+             
+             
+             
            )
   ),
   
