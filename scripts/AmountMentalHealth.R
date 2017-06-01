@@ -1,6 +1,6 @@
 library(dplyr)
 library(shiny)
-library(ggplot2)
+library(plotly)
 library(stringr)
 
 
@@ -20,18 +20,6 @@ work.places <- mental.health %>%
 work.places.by.country <-
   work.places %>% group_by(What.country.do.you.work.in.) %>% 
   count(Do.you.currently.have.a.mental.health.disorder.)
-
-# Creates data for each gender norrawing down by row.
-females.data <- gender.data[c(2, 7, 8, 14, 17:21, 23:28, 30, 40, 71, 72),]
-males.data <- gender.data[c(9:13, 15, 39, 41:50, 53, 55:57, 67),]
-others.data <- gender.data[c(1, 3:6, 16, 22, 29, 31:38, 51, 52, 54, 58:66, 68:70),]
-
-# Finds number of each gender took the survey
-number.of.females <- sum(females.data$x, na.rm = FALSE)
-number.of.males <- sum(males.data$x, na.rm = FALSE)
-number.of.others <- sum(others.data$x, na.rm = FALSE)
-number.of.people <- sum(gender.data$x, na.rm = FALSE)
-
 
 # Creates Bar chart for countries vs having a mental disorder
 AmountMentalHealth <- function (country) {
