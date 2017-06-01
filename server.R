@@ -31,6 +31,8 @@ shinyServer(function(input, output, session) {
   output$WorldMap <- renderPlotly({
     return(data.geo.world(df))
   })
+  
+  # Renders a plotly plot of the treatment script
   output$treatment <- renderPlotly({
     return(CreatePlot(df))
   })
