@@ -72,7 +72,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
              ),
              mainPanel(
                plotlyOutput('companySizeComparisons'),
-               h2("Data Insights", align = "center"),
+               h2(strong("Data Insights"), align = "center"),
                h4("Coworkers"),
                p("When we look at the chart in regards to how comfortable employees are in sharing their mental health
                  with fellow coworkers, in almost every case employees are very relunctant to share that personal information. It seems
@@ -112,7 +112,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
            titlePanel(''),
            #sidebarLayout(
             #sidebarPanel(),
-            mainPanel(h3("Team members", align = 'center'),
+            mainPanel(h2("Team Members"),
                        h4("  Ivan Mireles", align = 'center'),
                        h4("  Drew Gallardo", align = 'center'),
                        h4("  William Abuassi", align = 'center'),
