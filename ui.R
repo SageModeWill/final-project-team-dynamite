@@ -28,7 +28,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
             )
          
     ),
-  tabPanel('Data source',
+  tabPanel('Data Source',
            titlePanel('Where is our data comming from? '),
            
            mainPanel(
@@ -82,7 +82,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                  supervisors, people are suprisingly more comfortable in sharing that information. In companies of all sizes execpt
                  over 1000, the most popular response was", span("YES", style = "color:blue"), ". This shows that employees, in general,
                  seem to trust their supervisors even in the larger company sizes. This goes to show that leadership and trust
-                 are improtant and integrated in many companies, even when the data shows that trust within coworkersmay not be
+                 are improtant/integrated parts in many companies, even when the data shows that trust within coworkers may not be
                  as strong.")
              )
              )
@@ -97,10 +97,9 @@ shinyUI(navbarPage("Mental Health in the Tech World",
   
   tabPanel('Documentation',
            titlePanel(''),
-           
            #sidebarLayout(
-             #sidebarPanel(),
-           mainPanel(h3("Team members", align = 'center'),
+            #sidebarPanel(),
+            mainPanel(h3("Team members", align = 'center'),
                        h4("  Ivan Mireles", align = 'center'),
                        h4("  Drew Gallardo", align = 'center'),
                        h4("  William Abuassi", align = 'center'),
