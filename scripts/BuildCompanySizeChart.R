@@ -1,12 +1,13 @@
 library(dplyr)
 library(plotly)
 
+# 
 BuildCompanySizeChart <- function(data, shared) {
   
   # making all blank data points say "NA" for future use 
   df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAsFactors = FALSE, na.strings = c("", "NA"))
   
-  #intitally getting desired data 
+  #intitally getting desired data and renaming for eaiser use
   target.df <- df %>% 
     select_("How.many.employees.does.your.company.or.organization.have.", shared) %>% 
     na.omit() %>% 
@@ -32,7 +33,7 @@ BuildCompanySizeChart <- function(data, shared) {
     tally() %>% 
     rename(No = n)
   
-  # combining all the data counts 
+  # combining all the data counts into single dataframe
   combined.data <- full_join(yes.data, no.data, by = "CompanySize") %>% 
     full_join(., maybe.data, by = "CompanySize") 
   
@@ -40,6 +41,7 @@ BuildCompanySizeChart <- function(data, shared) {
   final.data <- combined.data[c(1, 5, 3, 2, 4, 6),]
   test.data <- final.data$CompanySize
   
+  # creating a bar chart that shows data based on response 
   p <- plot_ly(data = final.data, x = test.data, 
                y = ~Yes, name = "Yes",
                type = "bar") %>% 
