@@ -8,6 +8,7 @@ df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAs
 source('./scripts/AmountMentalHealth.r')
 source('./scripts/GeoData.r')
 source('./scripts/SurveyChart.r')
+source('./scripts/BuildCompanySizeChart.R')
 
 shinyServer(function(input, output, session) { 
   
@@ -16,6 +17,11 @@ shinyServer(function(input, output, session) {
   
   output$countrybarchart <- renderPlotly({
     return(AmountMentalHealth(input$State))
+  })
+  
+  # Render the plotly bar company size
+  output$companySizeComparisons <- renderPlotly({
+    return(BuildCompanySizeChart(df, input$status))
   })
   
   output$AmericaMap <- renderPlotly({
@@ -30,3 +36,4 @@ shinyServer(function(input, output, session) {
   })
   
 })
+  
