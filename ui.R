@@ -7,8 +7,8 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                    theme = shinytheme("yeti"),
   tabPanel('Overview',
              mainPanel(
-               img(src = "OSMI.png", width = 300, height = 300),
-                br(),
+               HTML('<left><img src="mhData.png" width="300"></left>'),
+               br(),
                 h3("Project Description"),
                p('The research was conducted by the OSMI help organization. To view a more about their research you can view the link below:'),
                p('www.kaggle.com/osmi/mental-health-in-tech-2016'),
@@ -102,11 +102,17 @@ shinyUI(navbarPage("Mental Health in the Tech World",
            titlePanel(''),
            #sidebarLayout(
             #sidebarPanel(),
-            mainPanel(h2("Team Members"),
+            mainPanel(h2("Team Members", align = 'center'),
                        h4("  Ivan Mireles", align = 'center'),
                        h4("  Drew Gallardo", align = 'center'),
                        h4("  William Abuassi", align = 'center'),
-                       h4("  Sitong Wu", align = 'center')
+                       h4("  Sitong Wu", align = 'center'),
+                      br(),
+                      HTML('<center><img src="OSMI.png" width="200"></center>'),
+                      br(),
+                      p('The research was conducted by the OSMI help organization. To view a more about their research you can view the link below:', align = 'center'),
+                      HTML('<center><a href="https://www.kaggle.com/osmi/mental-health-in-tech-2016">Mental Health in Technology Field</a></center>')
+                      
           )
   )
 ))
