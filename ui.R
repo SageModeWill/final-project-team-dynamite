@@ -23,7 +23,6 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                  realize there is always more to be done to allow those with mental health issues to thrive in work,
                  and not be afraid no matter the size of the company.')
             )
-         
   ),
   tabPanel('Data Source',
            titlePanel('Where is our data coming from? '),
