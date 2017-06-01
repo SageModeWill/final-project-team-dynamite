@@ -30,9 +30,9 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                 br()
             )
          
-    ),
+  ),
   tabPanel('Data Source',
-           titlePanel('Where is our data comming from? '),
+           titlePanel('Where is our data coming from? '),
            
            mainPanel(
              plotlyOutput('WorldMap'),
@@ -59,7 +59,6 @@ shinyUI(navbarPage("Mental Health in the Tech World",
              )
            )
   ),
-  
   tabPanel('Company Size and Comfort of Sharing',
            titlePanel(""),
            sidebarLayout(
@@ -75,39 +74,37 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                h2("Data Insights", align = "center"),
                h4("Coworkers"),
                p("When we look at the chart in regards to how comfortable employees are in sharing their mental health
-                 with fellow coworkers, in almost every case employees are very relunctant to share that personal information. It seems
-                 that most people are unsure of what they would do, with the answer of", span("MAYBE", style = "color:green"), "being the
-                 most common followed closely behind", span("NO", style = "color:red"), ". There seems to be constant stigma from fellow workers
-                 that may discourage sharing something so personal that they may not think is work related."),
+                 with fellow coworkers, in almost every case employees are very relunctant to share that personal 
+                 information. It seems that most people are unsure of what they would do, with the answer of", 
+                 span("MAYBE", style = "color:green"), "being the most common followed closely behind", 
+                 span("NO", style = "color:red"), ". There seems to be constant stigma from fellow workers that may 
+                 discourage sharing something so personal that they may not think is work related."),
                br(),
                h4("Supervisors"),
-               p("Looking at the second chart in regards to how comfortable employees are in sharing their mental health with
-                 supervisors, people are suprisingly more comfortable in sharing that information. In companies of all sizes execpt
-                 over 1000, the most popular response was", span("YES", style = "color:blue"), ". This shows that employees, in general,
-                 seem to trust their supervisors even in the larger company sizes. This goes to show that leadership and trust
-                 are improtant/integrated parts in many companies, even when the data shows that trust within coworkers may not be
-                 as strong.")
+               p("Looking at the second chart in regards to how comfortable employees are in sharing their mental health 
+                 with supervisors, people are suprisingly more comfortable in sharing that information. In companies of 
+                 all sizes execpt over 1000, the most popular response was", span("YES", style = "color:blue"), ". This 
+                 shows that employees, in general, seem to trust their supervisors even in the larger company sizes. This 
+                 goes to show that leadership and trust are important/integrated parts in many companies, even when the 
+                 data shows that trust within coworkers may not be as strong.")
              )
              )
   ),
-  
   tabPanel('Treatments Effect on Work',
            titlePanel('How Important is Treatment?'),
            mainPanel(
              plotlyOutput('treatment'),
              br(),
              h2('Treatments is Beneficial to Work Efficiency', align = 'center'),
-             p('According to the survey results, one can interpret the data to represent different scenarious involving employees and mental health issues.
-               This is imporant when looking at the data and drawing the following conclusion: A worker who fails to receive the proper treatment for their health issues may be subject to inadequate work performance.
-               this is because the mental health issue is more than likely to become a continuous/reoccuring problem for the individual if left untreated. The difference in 
-               receiving treatment, however, is that workers would actively be aware of their behaviors, and any minor issue that may occur would be rare
-               as opposed to being a day-to-day issue within the workplace.')
-             
-             
-             
-           )
+             p('According to the survey results, one can interpret the data to represent different scenarious involving 
+               employees and mental health issues. This is imporant when looking at the data and drawing the following 
+               conclusion: A worker who fails to receive the proper treatment for their health issues may be subject to 
+               inadequate work performance. This is because the mental health issue is more than likely to become a 
+               continuous/reoccuring problem for the individual if left untreated. The difference in receiving treatment,
+               however, is that workers would actively be aware of their behaviors, and any minor issue that may occur 
+               would be rare as opposed to being a day-to-day issue within the workplace.')
+            )
   ),
-  
   tabPanel('Documentation',
            titlePanel(''),
            #sidebarLayout(
@@ -118,7 +115,6 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                        h4("  William Abuassi", align = 'center'),
                        h4("  Sitong Wu", align = 'center')
           )
-    )
   )
-)
+))
 
