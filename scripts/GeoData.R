@@ -16,7 +16,7 @@ data.geo.america <- function(df){
   
   geo.america$hover <- with(geo.america, paste("surveys from", What.US.state.or.territory.do.you.work.in., '<br>'))
   
-  l <- list(color = toRGB("white"), width = 2)
+  l <- list(color = toRGB("red"), width = 2)
   
   g <- list(
     scope = 'usa',
@@ -30,7 +30,7 @@ data.geo.america <- function(df){
       z = ~n, text = ~hover, locations = ~state,
       color = ~n, colors = 'Purples'
     ) %>%
-    colorbar(title = "Amount of Survey") %>%
+    colorbar(title = "Amount of Observations") %>%
     layout(
       title = 'American Map for the Data Source',
       geo = g
@@ -47,20 +47,20 @@ data.geo.world <- function(df){
     mutate(code = countrycode(geo.world$What.country.do.you.work.in., "country.name", "iso3c" )) %>% 
     filter(code != "")
   
-  l <- list(color = toRGB("grey"), width = 0.5)
+  l <- list(color = toRGB("Black"), width = 0.5)
   
   g <- list(
     showframe = FALSE,
-    showcoastlines = FALSE,
+    showcoastlines = TRUE,
     projection = list(type = 'Mercator')
   )
   
   p <- plot_geo(geo.world) %>%
     add_trace(
-      z = ~n, color = ~n, colors = 'Blues',
+      z = ~n, color = ~n, colors = 'Reds',
       text = ~What.country.do.you.work.in., locations = ~code, marker = list(line = l)
     ) %>%
-    colorbar(title = 'Amount of Survey') %>%
+    colorbar(title = 'Amount of Observations') %>%
     layout(
       title = 'World Map for the Data Source',
       geo = g

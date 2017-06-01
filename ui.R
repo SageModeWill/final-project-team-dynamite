@@ -7,20 +7,16 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                    theme = shinytheme("yeti"),
   tabPanel('Overview',
              mainPanel(
-               img(src = "OSMI.png", width = 300, height = 300),
-                br(),
-                h3("Project Description"),
-               p('The research was conducted by the OSMI help organization. To view a more about their research you can view the link below:'),
-               p('www.kaggle.com/osmi/mental-health-in-tech-2016'),
+               h1(strong("2016 Mental Health Tech Survey")),
                br(),
-               p('This webpage will allow our target audience to more easily read data, and visualize the effects that mental illness
-                  can have on employees. It is also helpful in allowing users to look into different resources for mental illness. This is particularly
-                  important for managers when deciding what teams would be most apt in working together. Another concern that this program brings up,
-                  however, is the fact that employer may be able to see mental disorders in applicants and make judgements before qualifying them for
-                  their skills as opposed to their illnesses. They may also be able to categorize the different countries that alienate employees based 
-                 off of their illnesses and find ways to counter these actions through their own work environments. One of the most prevalent questions, 
-                 however, may involve asking employees if they are aware of all he services and resources that can be provided, given he situation where 
-                 someone does have a mental illness that needs to be treated')
+               img(src = "Openup.png", height = 300, width = 500),
+               br(),
+               br(),
+               p('In 2016, Open Sourcing Mental Illness conducted a poll on 1433 individuals of varying age in order 
+                  to study the mental health in the tech world.'),
+               br(),
+               p('This webpage will allow our target audience like companies to easily read and visualize 
+                 the data on mental health. ')
             )
          
   ),
@@ -106,7 +102,10 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                        h4("  Ivan Mireles", align = 'center'),
                        h4("  Drew Gallardo", align = 'center'),
                        h4("  William Abuassi", align = 'center'),
-                       h4("  Sitong Wu", align = 'center')
+                       h4("  Sitong Wu", align = 'center'),
+                      p('The research was conducted by the OSMI help organization. To view a more about their research 
+                        you can view the link below:'),
+                      p('www.kaggle.com/osmi/mental-health-in-tech-2016')
           )
   )
 ))
