@@ -7,6 +7,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                    theme = shinytheme("yeti"),
   tabPanel('Overview',
              mainPanel(
+               img(src = "OSMI.png", width = 300, height = 300),
                 br(),
                 h3("Project Description"),
                 p("The data set we will be working with is OSMI Mental Health in Tech Survey 2016, 
