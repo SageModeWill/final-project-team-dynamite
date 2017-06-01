@@ -110,7 +110,10 @@ shinyUI(navbarPage("Mental Health in the Tech World",
                       HTML('<center><img src="OSMI.png" width="200"></center>'),
                       br(),
                       p('The research was conducted by the OSMI help organization. To view a more about their research you can view the link below:', align = 'center'),
-                      HTML('<center><a href="https://www.kaggle.com/osmi/mental-health-in-tech-2016">Mental Health in Technology Field</a></center>')
+                      HTML('<center><a href="https://www.kaggle.com/osmi/mental-health-in-tech-2016">Mental Health in Technology Field</a></center>'),
+                      br(),
+                      p('To view our source code on Github click the link below', align = 'center'),
+                      HTML('<center><a href="https://github.com/SageModeWill/final-project-team-dynamite/">Team Dynamite</a></center>')
           )
   )
 ))
