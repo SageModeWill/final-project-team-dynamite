@@ -56,8 +56,15 @@ shinyUI(navbarPage("Mental Health in the Tech World",
              )
            )
   ),
+  tabPanel('Treatments Effect on Work',
+           titlePanel('How Important is Treatment?'),
+           mainPanel(
+             plotlyOutput('treatment')
+           )
+  ),
   tabPanel('Documentation',
            titlePanel(''),
+           
            #sidebarLayout(
              #sidebarPanel(),
            mainPanel(h3("Team members", align = 'center'),
@@ -69,4 +76,3 @@ shinyUI(navbarPage("Mental Health in the Tech World",
     )
   )
 )
-

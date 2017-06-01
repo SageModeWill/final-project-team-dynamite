@@ -7,6 +7,7 @@ df <- read.csv(file = './data/mental-heath-in-tech-2016_20161114.csv', stringsAs
 
 source('./scripts/AmountMentalHealth.r')
 source('./scripts/GeoData.r')
+source('./scripts/SurveyChart.r')
 
 shinyServer(function(input, output, session) { 
   
@@ -23,6 +24,9 @@ shinyServer(function(input, output, session) {
   
   output$WorldMap <- renderPlotly({
     return(data.geo.world(df))
+  })
+  output$treatment <- renderPlotly({
+    return(CreatePlot(df))
   })
   
 })
