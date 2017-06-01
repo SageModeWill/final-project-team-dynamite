@@ -1,8 +1,10 @@
 # ui.R
 library(shiny)
 library(plotly)
+library(shinythemes)
 
 shinyUI(navbarPage("Mental Health in the Tech World",
+                   theme = shinytheme("yeti"),
   tabPanel('Overview',
              mainPanel(
                 br(),
