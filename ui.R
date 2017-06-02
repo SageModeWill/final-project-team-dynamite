@@ -60,7 +60,7 @@ shinyUI(navbarPage("Mental Health in the Tech World",
   ),
   
   # The fourth tab of the user interface
-  tabPanel('Company Size and Comfort of Sharing',
+  tabPanel('Company Size and Comfort in Sharing',
            titlePanel(""),
            sidebarLayout(
              sidebarPanel(
